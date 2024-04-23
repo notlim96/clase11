@@ -37,7 +37,7 @@ class Program
                             try
                             {
                                 int num1, num2;
-                                Console.WriteLine("Ingrese el Numero 1:");
+                                Console.WriteLine("Ingrese el Numero  1:");
                                 num1 = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("Ingrese el Numero 2:");
                                 num2 = Convert.ToInt32(Console.ReadLine());
