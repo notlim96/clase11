@@ -61,31 +61,33 @@ class Program
                         } while (!salire1);
                         break;
                     case 2:
-                        ManejadorLista manejador = new ManejadorLista();
-
-                        manejador.AgregarElemento(10);
-                        manejador.AgregarElemento(20);
-                        manejador.AgregarElemento(30);
-
-                        string value = "";
-                        try
+                        Ejercicio2 manejador = new Ejercicio2();
+                        // llenamos la lista de manera dinamica
+                        string Salire2 = "";
+                        int elemento2 = 0;
+                        do
                         {
-                            for (int i = 0; i < 4; i++)
-                            {
-                                Console.WriteLine("Desea eliminar un elemento, presion s, para continuar: ");
-                                value = Console.ReadLine();
-                                if (value.Equals("s"))
-                                {
-                                    manejador.EliminarElemento();
-                                    Console.WriteLine("Elemento eliminado.");
-                                }
+                            Console.WriteLine("*********** AGREGAR ELEMENTO  **********");
+                            Console.WriteLine("Ingresar un  nuevo valor");
+                            elemento2 = Convert.ToInt32(Console.ReadLine());
 
-                            }
-                        }
-                        catch (InvalidOperationException ex)
+                            manejador.Elemento2 = elemento2;
+                            manejador.AgregarElemento();
+
+                            Console.WriteLine("¿Deseas Salir, Escriba(SI/NO)?");
+                            Salire2 = Console.ReadLine();
+
+                        } while (Salire2.ToUpper() != "SI");
+                        // eliminamos elementos de la list
+                        string Salire3 = "";
+                        do
                         {
-                            Console.WriteLine("Error: " + ex.Message);
-                        }
+                            Console.WriteLine("*********** ELIMINAR ELEMENTO  **********");
+                            manejador.EliminarElemento();
+                            Console.WriteLine("¿Desea seguir eliminando un elemento, Escriba(SI/NO)?");
+                            Salire3 = Console.ReadLine();
+            
+                        } while (Salire3.ToUpper() != "NO");
                         salir = true;
                         break;
                     case 3:
@@ -94,7 +96,7 @@ class Program
                         salir = true;
                         break;
                     default:
-                        Console.WriteLine("Opcio  no valida solo se acepta opciones (1),(2),(3)");
+                        Console.WriteLine("Opcion  no valida solo se acepta opciones (1),(2),(3)");
                         break;
                 }
             }
